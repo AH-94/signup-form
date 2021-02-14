@@ -1,0 +1,226 @@
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: all ease-in-out 200ms;
+    -webkit-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms;
+}
+
+:root {
+    --fw-light: 400;
+    --fw-medium: 500;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    /* primary colours */
+
+    --clr-red: hsl(0, 100%, 74%);
+    --clr-green: hsl(154, 59%, 51%);
+
+    /* accent colours */
+
+    --clr-blue: hsl(248, 32%, 49%);
+
+    /* nuetral colours */
+
+    --clr-dark-blue: hsl(249, 10%, 26%) ;
+    --clr-grayish-blue: hsl(246, 25%, 77%);
+}
+
+
+body {
+    min-height: 100vh;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: var(--fw-normal);
+    color: #fff;
+    line-height: 1.5;
+    text-align: center;
+    background-color: var(--clr-red);
+    background-image: url('bg-intro-mobile.png');
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    body {
+        background-image: url('bg-intro-desktop.png');
+    }
+
+    br {
+        display: none;
+    }
+}
+
+p {
+    margin: 0;
+}
+
+.signup--container {
+    width: 90%;
+    max-width: 1440px;
+    margin: 10em 0;
+}
+
+@media (min-width: 768px) {
+    .signup--container {
+        display: -ms-flex;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+        -ms-justify-content: space-evenly;
+        -moz-justify-content: space-evenly;
+        -webkit-justify-content: space-evenly;
+        justify-content: space-evenly;
+        -ms-align-items: center;
+        -moz-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        -moz-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1355px) {
+    .signup--container {
+        margin: 0;
+    }
+}
+
+/* intro section */
+
+.intro__copy {
+    margin-bottom: 4em;
+}
+
+.intro__title {
+    font-weight: var(--fw-bold);
+    line-height: 1.3;
+    margin: 0 0 .5em;
+}
+
+@media (min-width: 768px) {
+    .intro__copy {
+        width: 60ch;
+    }
+
+    .intro__title {
+        font-size: 4em;
+    }
+}
+
+@media (min-width: 1355px) {
+    .intro__copy {
+        margin-bottom: 0;
+        text-align: left;
+    }
+}
+
+/* form section */
+
+.form, .message__container {
+    border-radius: 10px;
+    -moz-box-shadow: 0 8px 0 0 rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 8px 0 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 8px 0 0 rgba(0, 0, 0, .2);
+}
+
+.message__container {
+    width: 100%;
+    background: var(--clr-blue);
+    padding: 1.5em;
+    margin-bottom: 2em;
+}
+
+
+.form {
+   width: 100%;
+   background: #fff;
+   color: var(--clr-dark-blue);
+   padding: 2em;
+}
+
+input:not(:first-child) {
+    margin-top: 1.5em;
+}
+
+.form__field, .submit__btn {
+    display: block;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding: 1.3em 1em;
+   /* margin-bottom: 1.5em; */
+    font-size: inherit;
+    font-weight: var(--fw-semi-bold);
+}
+
+.form__field {
+    text-align: left;
+    border: 1px solid var(--clr-grayish-blue);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+}
+
+.submit__btn {
+    margin-bottom: 1.5em;
+    background: var(--clr-green);
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.submit__btn:hover {
+    opacity: .8;
+}
+
+.agreement {
+    font-size: .8em;
+    color: var(--clr-grayish-blue);
+}
+
+.agreement a {
+    text-decoration: none;
+    font-weight: var(--fw-medium);
+    color: var(--clr-red);
+}
+
+.error__message {
+    display: none;
+    float: right;
+    margin: .5em 0;
+    font-size: .8em;
+    color: var(--clr-red);
+}
+
+.form__field.invalid {
+    background-image: url('icon-error.svg');
+    border: 1px solid var(--clr-red);
+}
+
+.form__field.invalid + .error__message {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .form__section {
+        width: 600px;
+    }
+}
